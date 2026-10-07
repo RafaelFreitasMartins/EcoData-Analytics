@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Climáticos - Agroclima</title>
+    <!-- Fontes e Ícones para o Menu Lateral -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --text-color: #333;
+            --bg-color: #f9fbf9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: transparent;
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('floresta-amazonica-rio-amazonas.webp');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* ESTILOS DO MENU LATERAL (Idêntico ao print) */
+        .sidebar {
+            width: 270px;
+            min-width: 270px;
+            background-color: #ffffff;
+            border-right: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 20px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            font-family: 'Inter', sans-serif; /* Fonte específica para o menu ficar igual ao print */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            padding-left: 12px;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: #0b5e53; 
+            stroke-width: 10px;
+        }
+
+        .logo-text {
+            font-size: 19px;
+            line-height: 1.1;
+            color: #04252a; 
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text strong {
+            font-weight: 800;
+            display: block;
+        }
+
+        .logo-text span {
+            font-weight: 500;
+            color: #36484e;
+        }
+
+        .logo-text span .dot {
+            color: #3e98c7; 
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #928373; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-item a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            text-decoration: none;
+            color: #536267; 
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item a:hover {
+            background-color: #f7f9f9;
+        }
+
+        .menu-item a i {
+            font-size: 20px;
+            color: #6a797e; 
+        }
+
+        .menu-item.active a {
+            background-color: #def0e7; 
+            color: #086b5d; 
+        }
+
+        .menu-item.active a i {
+            color: #086b5d; 
+        }
+
+        .badge {
+            background-color: #ffefc6; 
+            color: #b07e15;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-left: auto;
+            line-height: 1;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+
+        .sidebar-footer {
+            margin-top: 20px;
+            padding-left: 12px;
+        }
+
+        .footer-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2b8b80; 
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .footer-location i {
+            font-size: 18px;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #8c9fa4; 
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* CONTEÚDO DA PÁGINA (Direita) */
+        .page-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-small {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .top-nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            padding-bottom: 5px;
+        }
+
+        .top-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .top-nav a.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .phenomenon-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-left: 6px solid;
+        }
+
+        .card.nino { border-left-color: #ef5350; }
+        .card.nina { border-left-color: #42a5f5; }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .card.nino h2 { color: #c62828; }
+        .card.nina h2 { color: #1565c0; }
+
+        .impact {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .impact strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .phenomenon-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-text">
+                <strong>EcoData</strong>
+                <span>Analytics</span>
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li class="menu-item active">
+                <a href="eventos.html">
+                    <i class="ph ph-waves"></i>
+                    Fenômenos Climáticos
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="desafio.html">
+                    <i class="ph ph-plant"></i>
+                    Desafio
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="powerbi.html">
+                    <i class="ph ph-shield-check"></i>
+                    Power BI
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="tema.html">
+                    <i class="ph ph-article"></i>
+                    Tema
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="participantes.html">
+                    <i class="ph ph-users"></i>
+                    Participantes
+                </a>
+            </li>
+        </ul>
+
+        <div class="spacer"></div>
+
+        <div class="sidebar-footer">
+            <div class="footer-location">
+                <i class="ph ph-map-pin"></i>
+                Amazônia Legal
+            </div>
+            <div class="footer-text">
+                Território conectado.<br>
+                Decisões mais resilientes.
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO DA PÁGINA (Direita) -->
+    <div class="page-content">
+
+        <main>
+            <div class="title-section">
+                <h1>O que são o El Niño e a La Niña?</h1>
+                <p>Compreenda como esses fenômenos globais afetam a nossa região.</p>
+            </div>
+
+            <div class="phenomenon-grid">
+                <div class="card nino">
+                    <h2>El Niño</h2>
+                    <p>
+                        O El Niño é caracterizado pelo aquecimento anormal das águas do Oceano Pacífico Equatorial. 
+                        Isso muda os padrões de circulação dos ventos e altera o clima em diversas partes do mundo.
+                    </p>
+                    <div class="impact">
+                        <strong>Impacto na Amazônia e Belém:</strong> 
+                        Geralmente, causa uma redução drástica nas chuvas, levando a secas prolongadas. 
+                        As temperaturas sobem, o que prejudica severamente as safras agrícolas e aumenta consideravelmente o risco de incêndios florestais.
+                    </div>
+                </div>
+
+                <div class="card nina">
+                    <h2>La Niña</h2>
+                    <p>
+                        A La Niña é o fenômeno oposto: ocorre o resfriamento anormal das águas do Oceano Pacífico Equatorial. 
+                        Assim como o El Niño, ela mexe com a circulação atmosférica global.
+                    </p>
+                    <div class="impact">
+                        <strong>Impacto na Amazônia e Belém:</strong> 
+                        Costuma provocar um aumento significativo das precipitações (chuvas acima da média histórica) 
+                        e maior nebulosidade. O excesso de água pode causar enchentes, alagamentos de áreas ribeirinhas e prejudicar o manejo do solo nas lavouras.
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

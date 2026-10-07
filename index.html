@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - EcoData Analytics</title>
+    <!-- Importando a fonte Montserrat para o título -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --bg-color: #f1f8e9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('floresta-amazonica-rio-amazonas.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .home-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            max-width: 650px;
+            width: 85%;
+            backdrop-filter: blur(4px);
+        }
+
+        .logo {
+            max-width: 160px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif; /* Aplicando a nova fonte aqui */
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn.secondary {
+            background-color: #f39c12;
+        }
+        
+        .btn.secondary:hover {
+            background-color: #e67e22;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.4);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="home-container">
+        <img src="Emblema Verde de Terra e Folha.png" alt="Emblema Verde de Terra e Folha" class="logo">
+        
+        <h1>EcoData Analytics</h1>
+        
+        <h2>Projeto de TCC sobre as condições climáticas na Amazônia e Belém</h2>
+        
+        <div class="btn-container">
+            <a href="eventos.html" class="btn">Fenômenos Climáticos</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 - TCC Agroclima na Amazônia
+    </footer>
+
+</body>
+</html>

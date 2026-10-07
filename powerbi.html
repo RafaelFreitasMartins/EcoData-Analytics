@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Power BI - Agroclima</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --powerbi-color: #f2c811;
+            --bg-color: #f0f4f1;
+            --text-color: #333;
+        }
+
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            color: var(--text-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('floresta-amazonica-rio-amazonas.webp');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f5e9;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #c8e6c9;
+        }
+
+        .external-link {
+            text-decoration: none;
+            background-color: var(--powerbi-color);
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid #d4b00e;
+            transition: transform 0.2s;
+        }
+
+        .external-link:hover {
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .iframe-container {
+            flex-grow: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .notice {
+            background-color: #fff9e6;
+            border-left: 4px solid var(--powerbi-color);
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← Voltar para o Início</a>
+        <a href="PROJETO (3).pbix" class="external-link" download>Baixar Arquivo PBIX ⬇</a>
+    </header>
+
+    <main>
+        <div class="iframe-container">
+            <iframe title="Dashboard EcoData Analytics Final" width="100%" height="100%" src="https://app.powerbi.com/reportEmbed?reportId=cd231b33-64cc-46b7-959e-a7433e884736&autoAuth=true&ctid=bd697c1b-c481-479c-841e-c618542675c3" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+    </main>
+
+</body>
+</html>
+
