@@ -1,16 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Participantes - Agroclima</title>
-    <!-- Fontes e Ãcones para o Menu Lateral -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Participantes - Agroclima</title>
+<!-- Fontes e Ãcones para o Menu Lateral -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@900&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --primary-color: #2e7d32;
             --text-color: #333;
@@ -39,41 +39,35 @@
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('floresta-amazonica-rio-amazonas.webp');
+            background-image: url('amazon_river_hd.jpg');
             background-size: cover;
             background-position: center;
-            filter: blur(5px);
+            
             z-index: -1;
-            opacity: 0.6;
+            opacity: 1;
         }
 
-        /* ESTILOS DO MENU LATERAL */
-        .sidebar {
-            width: 270px;
-            min-width: 270px;
+        
+        /* HEADER NAVIGATION */
+        .top-header {
             background-color: #ffffff;
-            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
             display: flex;
-            flex-direction: column;
-            padding: 32px 20px;
-            height: 100vh;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            height: 80px;
             position: sticky;
             top: 0;
+            z-index: 1000;
             font-family: 'Inter', sans-serif;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 40px;
-            padding-left: 12px;
-        }
-
-        .logo-icon {
-            font-size: 28px;
-            color: #0b5e53; 
-            stroke-width: 10px;
         }
 
         .logo-text {
@@ -93,146 +87,87 @@
             color: #36484e;
         }
 
-        .logo-text span .dot {
-            color: #3e98c7; 
-        }
-
-        .section-title {
-            font-size: 11px;
-            font-weight: 600;
-            color: #928373; 
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-            padding-left: 12px;
-        }
-
         .menu {
             list-style: none;
             display: flex;
-            flex-direction: column;
-            gap: 4px;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
         }
 
         .menu-item a {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 10px 12px;
+            gap: 8px;
+            padding: 10px 16px;
             text-decoration: none;
-            color: #536267; 
-            border-radius: 8px;
+            color: #555555;
             font-size: 14px;
             font-weight: 500;
+            border-radius: 8px;
             transition: all 0.2s ease;
         }
 
-        .menu-item a:hover {
-            background-color: #f7f9f9;
-        }
-
         .menu-item a i {
-            font-size: 20px;
-            color: #6a797e; 
-        }
-
-        .menu-item.active a {
-            background-color: #def0e7; 
-            color: #086b5d; 
-        }
-
-        .menu-item.active a i {
-            color: #086b5d; 
-        }
-
-        .badge {
-            background-color: #ffefc6; 
-            color: #b07e15;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 6px;
-            border-radius: 4px;
-            margin-left: auto;
-            line-height: 1;
-        }
-
-        .spacer {
-            flex: 1;
-        }
-
-        .sidebar-footer {
-            margin-top: 20px;
-            padding-left: 12px;
-        }
-
-        .footer-location {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #2b8b80; 
-            font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .footer-location i {
             font-size: 18px;
         }
 
-        .footer-text {
-            font-size: 11px;
-            color: #8c9fa4; 
-            line-height: 1.6;
-            font-weight: 400;
+        .menu-item:hover a {
+            background-color: #f5f8f5;
+            color: #2e7d32;
         }
 
-        /* CONTEÃDO DA PÃGINA (Direita) */
+        .menu-item.active a {
+            background-color: #e8f5e9;
+            color: #1b5e20;
+            font-weight: 600;
+        }
+
+        
         .page-content {
             flex: 1;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
+            align-items: center;
         }
-
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            width: 100%;
-        }
-
+        
         .header-title {
             text-align: center;
             margin-bottom: 40px;
         }
-
-        h1 {
-            color: var(--primary-color);
+        
+        .header-title h1 {
+            font-size: 2.2rem;
+            color: #1b5e20;
             margin-bottom: 10px;
         }
+        
+        .header-title p {
+            font-size: 1.1rem;
+            color: #555;
+        }
 
-                .cards-row {
+        .cards-row {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             gap: 30px;
+            justify-content: center;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .profile-card {
-            position: relative;
-            border-radius: 16px;
+            width: 300px;
+            background: #fff;
+            border-radius: 12px;
             overflow: hidden;
-            background-color: #053b21;
-            color: white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            width: 260px;
-            aspect-ratio: 3 / 4;
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s;
         }
 
         .profile-card:hover {
@@ -240,15 +175,10 @@
         }
 
         .profile-img {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            height: 350px;
             object-fit: cover;
-            z-index: 1;
-            /* Placeholder background if no image is present */
-            background-color: #333;
+            display: block;
         }
 
         .profile-gradient {
@@ -256,239 +186,201 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 70%;
-            background: linear-gradient(to top, #053b21 30%, rgba(5, 59, 33, 0) 100%);
-            z-index: 2;
+            height: 150px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
         }
 
         .profile-content {
-            position: relative;
-            z-index: 3;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             padding: 20px;
-            padding-bottom: 25px;
+            color: #fff;
+            text-align: center;
         }
 
-        .profile-card h3 {
-            font-family: 'Montserrat', 'Inter', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 900;
-            margin: 0;
-            color: #d1ff27; /* Neon green/yellow */
+        .profile-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
             text-transform: uppercase;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
         }
 
-        .profile-card p {
+        .profile-content p {
             font-size: 0.85rem;
-            margin: 8px 0 16px;
-            font-weight: 600;
-            color: #f0f0f0;
+            color: #ddd;
+            margin-bottom: 15px;
         }
 
         .profile-socials {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 15px;
         }
 
         .profile-socials a {
-            color: white;
-            font-size: 26px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.2s;
         }
 
         .profile-socials a:hover {
-            color: #d1ff27;
-            transform: scale(1.15);
+            color: #4CAF50;
         }
 
-        .missao-box {
-            background: #e8f5e9;
-            border: 1px solid #c8e6c9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            color: #1b5e20;
+        body {
+            flex-direction: column;
         }
+        body { flex-direction: column !important; }
     </style>
 </head>
 <body>
+<!-- MENU LATERAL -->
 
-    <!-- MENU LATERAL -->
-    <aside class="sidebar">
+    <header class="top-header">
         <div class="logo-container">
             <div class="logo-text">
                 <strong>EcoData</strong>
                 <span>Analytics</span>
             </div>
         </div>
-
         <ul class="menu">
-            <li class="menu-item">
-                <a href="eventos.html">
-                    <i class="ph ph-waves"></i>
-                    FenÃ´menos ClimÃ¡ticos
-                </a>
-            </li>
-            <li class="menu-item"><a href="desafio.html"><i class="ph ph-plant"></i> Desafio</a></li>
-            <li class="menu-item">
-                <a href="powerbi.html">
-                    <i class="ph ph-shield-check"></i>
-                    Power BI
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="tema.html">
-                    <i class="ph ph-article"></i>
+<li class="menu-item">
+<a href="tema.html">
+<i class="ph ph-article"></i>
                     Tema
                 </a>
-            </li>
-            <li class="menu-item active"><a href="participantes.html"><i class="ph ph-users"></i> Participantes</a></li>
-        </ul>
+</li>
+<li class="menu-item">
+<a href="eventos.html">
+<i class="ph ph-waves"></i>
+                    Fenômenos Climáticos
+                </a>
+</li>
+<li class="menu-item">
+<a href="powerbi.html">
+<i class="ph ph-shield-check"></i>
+                    Power BI
+                </a>
+</li>
+<li class="menu-item">
+<a href="desafio.html">
+<i class="ph ph-plant"></i>
+                    Desafio
+                </a>
+</li>
+<li class="menu-item active">
+<a href="participantes.html">
+<i class="ph ph-users"></i>
+                    Participantes
+                </a>
+</li>
+</ul>
+    </header>
 
-        <div class="spacer"></div>
+<!-- CONTEÃDO DA PÃGINA (Direita) -->
+<div class="page-content">
+<main>
+<div class="header-title" style="text-align: center; margin-bottom: 40px; color: #fff;">
+<h1 style="color: var(--primary-color);">Nossa Equipe</h1>
+<p>Conheça os participantes do projeto Agroclima Amazônia</p>
+</div>
 
-        <div class="sidebar-footer">
-            <div class="footer-location">
-                <i class="ph ph-map-pin"></i>
-                AmazÃ´nia Legal
-            </div>
-            <div class="footer-text">
-                TerritÃ³rio conectado.<br>
-                DecisÃµes mais resilientes.
-            </div>
-        </div>
-    </aside>
-
-    <!-- CONTEÃDO DA PÃGINA (Direita) -->
-    <div class="page-content">
-
-                        <main>
-            <div class="header-title" style="text-align: center; margin-bottom: 40px; color: #fff;">
-                <h1 style="color: var(--primary-color);">Nossa Equipe</h1>
-                <p>Conheça os participantes do projeto Agroclima Amazônia</p>
-            </div>
-
-            
-            <div class="cards-row">
-                <!-- 1. Derline -->
-                <div class="profile-card">
-                    <img class="profile-img" src="Imagens%20participantes/Derline.jpg" alt="Derline Dimanche Bertrand" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>DERLINE DIMANCHE BERTRAND</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="https://www.linkedin.com/in/derlinebertrand" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="https://github.com/derlinedata" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="mailto:derlined@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Ivone -->
-                <div class="profile-card">
-                    <img class="profile-img" src="Imagens%20participantes/Ivone.jpg" alt="Ivone Durães Silveira" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>IVONE DURÃES SILVEIRA</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="https://www.linkedin.com/in/ivone-duraes-silveira" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="https://github.com/Ivoneduraes" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="mailto:iduraes99@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Jhenifer -->
-                <div class="profile-card">
-                    <img class="profile-img" src="Imagens%20participantes/Jhenifer.jpg" alt="Jhenifer Leticia dos Santos Martins" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>JHENIFER LETICIA DOS SANTOS MARTINS</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="https://www.linkedin.com/in/jhenifer-let%C3%ADcia-dos-santos-martins-64a41b357" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="https://github.com/jltixx" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="mailto:jltixxmartins@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cards-row">
-                <!-- 4. Larissa Maria -->
-                <div class="profile-card">
-                    <img class="profile-img" src="Imagens%20participantes/Larrisa%20Maria.png" alt="Larissa Maria Cardoso" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>LARISSA MARIA CARDOSO</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="https://www.linkedin.com/in/larissa-maria-cardoso" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="https://github.com/Larissa-gif-has" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="mailto:Lariiisssa.Maariaa@live.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Larissa Natalie -->
-                <div class="profile-card">
-                    <img class="profile-img" src="Imagens%20participantes/Larissa%20Natalie.jpg" alt="Larissa Natalie Caetano" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>LARISSA NATALIE CAETANO</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="https://www.linkedin.com/in/larissanatalie/" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="https://github.com/larissa-natalie" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="mailto:larissanatalieb@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Rafael -->
-                <div class="profile-card">
-                    <img class="profile-img" src="Imagens%20participantes/Rafael.jpg" alt="Rafael de Freitas Martins" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>RAFAEL DE FREITAS MARTINS</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="https://www.linkedin.com/in/rafaelfreitasmartins/" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="https://github.com/RafaelFreitasMartins" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="mailto:rafaelfreitas99@outlook.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. Participante 7 -->
-                <div class="profile-card">
-                    <img class="profile-img" src="https://via.placeholder.com/400x600/222222/555555?text=Foto+7" alt="Participante 7" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'">
-                    <div class="profile-gradient"></div>
-                    <div class="profile-content">
-                        <h3>PARTICIPANTE 7</h3>
-                        <p>Desenvolvedor / Analista de Dados</p>
-                        <div class="profile-socials">
-                            <a href="#" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-                            <a href="#" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
-                            <a href="#" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-    </div>
-
+<div class="cards-row">
+<div class="profile-card">
+<img alt="Angélica da Silva" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Angelica.jpg"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>ANGÉLICA DA SILVA</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/ang%C3%A9lica-da-silva-6694881b5/" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/angelgomes06-ops" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:angelica.gomees06@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+<div class="profile-card">
+<img alt="Derline Dimanche Bertrand" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Derline.jpg"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>DERLINE DIMANCHE BERTRAND</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/derlinebertrand" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/derlinedata" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:derlined@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+<div class="profile-card">
+<img alt="Ivone Durães Silveira" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Ivone.jpg"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>IVONE DURÃES SILVEIRA</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/ivone-duraes-silveira" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/Ivoneduraes" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:iduraes99@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="cards-row">
+<div class="profile-card">
+<img alt="Jhenifer Leticia dos Santos Martins" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Jhenifer.jpg"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>JHENIFER LETICIA DOS SANTOS MARTINS</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/jhenifer-let%C3%ADcia-dos-santos-martins-64a41b357" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/jltixx" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:jltixxmartins@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+<div class="profile-card">
+<img alt="Larissa Maria Cardoso" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Larissa%20Maria.png"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>LARISSA MARIA CARDOSO</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/larissa-maria-cardoso" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/Larissa-gif-has" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:Lariiisssa.Maariaa@live.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+<div class="profile-card">
+<img alt="Larissa Natalie Caetano" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Larissa%20Natalie.jpg"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>LARISSA NATALIE CAETANO</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/larissanatalie/" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/larissa-natalie" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:larissanatalieb@gmail.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+<div class="profile-card">
+<img alt="Rafael de Freitas Martins" class="profile-img" onerror="this.src='https://via.placeholder.com/400x600/222222/555555?text=Foto'" src="Imagens%20participantes/Rafael.jpg"/>
+<div class="profile-gradient"></div>
+<div class="profile-content">
+<h3>RAFAEL DE FREITAS MARTINS</h3>
+<p>Desenvolvedor / Analista de Dados</p>
+<div class="profile-socials">
+<a href="https://www.linkedin.com/in/rafaelfreitasmartins/" target="_blank" title="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+<a href="https://github.com/RafaelFreitasMartins" target="_blank" title="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+<a href="mailto:rafaelfreitas99@outlook.com" title="E-mail"><i class="ph-fill ph-envelope-simple"></i></a>
+</div>
+</div>
+</div>
+</div>
+</main></div>
 </body>
 </html>
-
-
-
