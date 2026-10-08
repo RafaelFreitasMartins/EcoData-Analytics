@@ -131,7 +131,7 @@
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
-            overflow-y: auto;
+            overflow-y: hidden;
         }
 
         .header-title {
@@ -163,7 +163,7 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
             justify-content: center;
         }
@@ -171,7 +171,7 @@
         .flip-card {
             background-color: transparent;
             width: 100%;
-            height: 380px;
+            height: 480px;
             perspective: 1000px;
         }
 
@@ -231,15 +231,15 @@
             color: #333333;
             transform: rotateY(180deg);
             border-top: 6px solid #4CAF50;
-            overflow-y: auto;
+            overflow-y: hidden;
             text-align: left;
             align-items: flex-start;
             justify-content: flex-start;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .flip-card-back::-webkit-scrollbar { width: 6px; }
-        .flip-card-back::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+        
+        
 
         .question {
             font-size: 1.1rem;
@@ -306,7 +306,7 @@
                 padding: 20px !important;
                 width: 95% !important;
                 max-height: 85vh !important;
-                overflow-y: auto;
+                overflow-y: hidden;
             }
             .dark-card h2 {
                 font-size: 1.3rem !important;
@@ -318,11 +318,14 @@
 
             /* Ajustes Desafio */
             .cards-grid {
-                grid-template-columns: 1fr !important;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            justify-content: center;
                 gap: 20px !important;
             }
             .flip-card {
-                height: 480px !important;
+                height: 550px !important;
             }
             .flip-card-front, .flip-card-back {
                 padding: 20px !important;
