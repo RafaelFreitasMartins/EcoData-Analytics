@@ -35,7 +35,7 @@
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('amazon_river_hd.jpg');
+            background-image: url('assets/img/amazon_river_hd.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -210,10 +210,28 @@
             }
         }
 </style>
+
+    <style>
+        @media (max-width: 768px) {
+            .audio-hints {
+                bottom: 15px !important;
+                left: 15px !important;
+                gap: 5px !important;
+            }
+            .audio-hints div {
+                font-size: 0.8rem !important;
+                padding: 6px 10px !important;
+            }
+            .audio-hints i {
+                font-size: 1.1rem !important;
+            }
+        }
+    </style>
+
 </head>
 <body>
 <div class="home-container">
-<img alt="Logo Atualizado" class="logo" src="Logo novo_transparent.png"/>
+<img alt="Logo Atualizado" class="logo" src="assets/img/Logo novo_transparent.png"/>
 <h1>EcoData Analytics</h1>
 <div class="btn-container">
 <a class="btn" href="tema.html">Tema</a>
@@ -223,7 +241,7 @@
         © 2026 - TCC Agroclima na Amazônia
     </footer>
 
-    <audio id="bg-audio" src="som_fundo.mp4" autoplay loop></audio>
+    <audio id="bg-audio" src="assets/media/som_fundo.mp4" autoplay loop></audio>
     <script>
 
         // Define o volume inicial do som ambiente (0.0 a 1.0)
@@ -256,5 +274,18 @@
         window.addEventListener('scroll', stopAudioOnScroll, { passive: true });
         window.addEventListener('touchmove', stopAudioOnScroll, { passive: true });
     </script>
+    <div class="audio-hints" style="position: absolute; bottom: 30px; left: 30px; z-index: 10;">
+        <div style="display: flex; flex-direction: column; gap: 8px; color: rgba(255, 255, 255, 0.9); font-family: 'Inter', sans-serif; font-size: 0.8rem; background: rgba(0,0,0,0.5); padding: 12px 18px; border-radius: 8px; backdrop-filter: blur(5px); box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="ph-fill ph-hand-pointing" style="font-size: 1.1rem; color: #4CAF50;"></i>
+                <span>Clique na tela para ativar o som</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="ph-fill ph-mouse" style="font-size: 1.1rem; color: #f44336;"></i>
+                <span>Scrolle para baixo para desativar o som</span>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
